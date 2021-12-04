@@ -1,8 +1,8 @@
 package package1;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 public class Frage009_StringCount {
 	/*
@@ -14,11 +14,12 @@ public class Frage009_StringCount {
 	  Output : Ali=1, came=2, to=2, school=2, and=1, Ayse=1
  */
 	static List<String>kelimeler=new ArrayList<>();
-	static HashMap<String,Integer>adedi=new HashMap<>();
+	
 	public static void main(String[] args) {
 		String str1="";
 		String str="Ali came to school and Ayse came to school";
-		
+		//Scanner scan=new Scanner(System.in);
+		//String str=scan.nextLine();
 		String [] list=str.split(" ");
 		
 		int adet=list.length;
@@ -33,10 +34,11 @@ public class Frage009_StringCount {
 			}
 			if(!str1.contains(list[i])) {
 				str1=str1+list[i]+"="+count+", ";
+				kelimeler.add(list[i]+"="+count);
 			}
 			 
 		}
-		
+		System.out.println(kelimeler.toString());
 		System.out.println(str1);
 	}
 	
